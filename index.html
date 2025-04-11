@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IJ Artigos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="interactive.js" defer></script>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <h1 class="splash-title">IJ Artigos</h1>
+            <div class="splash-loader"></div>
+            <div class="splash-copyright">
+                <p> 2024 Todos os Direitos Reservados</p>
+                <p>Desenvolvido por: <strong>Iago Henrique Taveira Bueno</strong></p>
+                <p class="company-text">das empresas Henrique</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="brand-text">IJ Artigos</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#artigos">Artigos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-palette"></i> Tema
+                        </a>
+                        <div class="dropdown-menu theme-customization" aria-labelledby="themeDropdown">
+                            <div class="theme-options p-3">
+                                <div class="color-section mb-3">
+                                    <label for="primaryColor">Cor Primária</label>
+                                    <div class="color-preview">
+                                        <input type="color" id="primaryColor" value="#C5A572">
+                                        <span>Cor de Destaque</span>
+                                    </div>
+                                </div>
+                                <div class="color-section mb-3">
+                                    <label for="secondaryColor">Cor Secundária</label>
+                                    <div class="color-preview">
+                                        <input type="color" id="secondaryColor" value="#1A1A1A">
+                                        <span>Cor de Fundo</span>
+                                    </div>
+                                </div>
+                                <div class="color-section">
+                                    <label>Modo de Exibição</label>
+                                    <button onclick="toggleDarkMode()" class="btn btn-gold w-100">
+                                        <i class="fas fa-moon"></i> Alternar Modo
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="text-large">Destaque qual a sua principal área de atuação</h1>
+                    <p class="text-highlight">Encontre aqui legislação atualizada para negócios ou estudos</p>
+                    <a href="#saiba-mais" class="btn btn-gold animate-hover">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="/a/26e653eb-45a8-4ec3-81b5-8ba4420dcf53" alt="Equipe de advogados" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <h2>Conheça nossa expertise em advocacia</h2>
+                    <p>Nossa equipe altamente qualificada está pronta para atender suas necessidades jurídicas com excelência e profissionalismo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Áreas de Atuação -->
+    <section id="areas" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Áreas de Atuação</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="area-card">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>Direito Civil</h3>
+                        <p>Contratos, Família, Sucessões</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="area-card">
+                        <i class="fas fa-gavel"></i>
+                        <h3>Direito Penal</h3>
+                        <p>Defesa Criminal, Júri</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="area-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Direito Trabalhista</h3>
+                        <p>Ações Trabalhistas, Acordos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artigos Section -->
+    <section id="artigos" class="section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5">Artigos e Legislação</h2>
+            
+            <!-- Search and Filter -->
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <input type="text" id="searchArticles" class="form-control" placeholder="Pesquisar artigos...">
+                </div>
+                <div class="col-md-4">
+                    <select id="codeFilter" class="form-select">
+                        <option value="all">Todos os Códigos</option>
+                        <option value="constituicao">Constituição Federal</option>
+                        <option value="civil">Código Civil</option>
+                        <option value="penal">Código Penal</option>
+                        <option value="clt">CLT</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Articles List -->
+            <div id="articlesList" class="row">
+                <!-- Articles will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos Section -->
+    <section id="planos" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Nossos Planos</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="plan-card">
+                        <h3>Gratuito</h3>
+                        <p class="price">R$ 0 / mês</p>
+                        <ul>
+                            <li>Acesso básico aos artigos</li>
+                            <li>Pesquisa limitada</li>
+                        </ul>
+                        <button class="btn btn-gold">Inscrever-se</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="plan-card recommended">
+                        <h3>Profissional</h3>
+                        <p class="price">R$ 29,90 / mês</p>
+                        <ul>
+                            <li>Acesso ilimitado aos artigos</li>
+                            <li>Pesquisa avançada</li>
+                            <li>Suporte prioritário</li>
+                        </ul>
+                        <button class="btn btn-gold">Inscrever-se</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="plan-card">
+                        <h3>Premium</h3>
+                        <p class="price">R$ 49,90 / mês</p>
+                        <ul>
+                            <li>Todos os recursos do plano profissional</li>
+                            <li>Acesso a artigos exclusivos</li>
+                            <li>Consultoria jurídica online</li>
+                        </ul>
+                        <button class="btn btn-gold">Inscrever-se</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>IJ Artigos</h4>
+                    <p>Seu guia jurídico completo</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contato</h4>
+                    <p>Email: contato@ijartigos.com.br</p>
+                    <p>Tel: (11) 1234-5678</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="theme-manager.js"></script>
+</body>
+</html>
