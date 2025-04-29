@@ -3,67 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IJ Artigos</title>
+    <title>IJ Jurídico - Soluções Jurídicas Inteligentes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="interactive.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <!-- Add some new meta tags for SEO -->
+    <meta name="description" content="IJ Jurídico - Soluções jurídicas inteligentes para empresas. Oferecemos consultoria especializada em direito empresarial, contratos e compliance.">
+    <meta name="keywords" content="advocacia empresarial, consultoria jurídica, direito corporativo, compliance, contratos">
 </head>
 <body>
-    <!-- Splash Screen -->
-    <div id="splash-screen" class="splash-screen">
-        <div class="splash-content">
-            <h1 class="splash-title">IJ Artigos</h1>
-            <div class="splash-loader"></div>
-            <div class="splash-copyright">
-                <p> 2024 Todos os Direitos Reservados</p>
-                <p>Desenvolvido por: <strong>Iago Henrique Taveira Bueno</strong></p>
-                <p class="company-text">das empresas Henrique</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <span class="brand-text">IJ Artigos</span>
+                <img src="/balanca.svg" alt="IJ Jurídico Logo" width="50" class="d-inline-block align-text-top">
+                IJ Jurídico
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#artigos">Artigos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#casos">Casos de Sucesso</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-palette"></i> Tema
+                        <a class="nav-link dropdown-toggle" href="#" id="temaDropdown" role="button" data-bs-toggle="dropdown">
+                            Personalização
                         </a>
-                        <div class="dropdown-menu theme-customization" aria-labelledby="themeDropdown">
-                            <div class="theme-options p-3">
-                                <div class="color-section mb-3">
-                                    <label for="primaryColor">Cor Primária</label>
-                                    <div class="color-preview">
-                                        <input type="color" id="primaryColor" value="#C5A572">
-                                        <span>Cor de Destaque</span>
-                                    </div>
-                                </div>
-                                <div class="color-section mb-3">
-                                    <label for="secondaryColor">Cor Secundária</label>
-                                    <div class="color-preview">
-                                        <input type="color" id="secondaryColor" value="#1A1A1A">
-                                        <span>Cor de Fundo</span>
-                                    </div>
-                                </div>
-                                <div class="color-section">
-                                    <label>Modo de Exibição</label>
-                                    <button onclick="toggleDarkMode()" class="btn btn-gold w-100">
-                                        <i class="fas fa-moon"></i> Alternar Modo
-                                    </button>
-                                </div>
+                        <div class="dropdown-menu p-3" aria-labelledby="temaDropdown">
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" id="darkModeToggle">
+                                <label class="form-check-label" for="darkModeToggle">Modo Escuro</label>
+                            </div>
+                            <div class="color-picker-container">
+                                <label>Cor Primária</label>
+                                <input type="color" id="primaryColor" class="form-control form-control-color">
+                                <label>Cor Secundária</label>
+                                <input type="color" id="secondaryColor" class="form-control form-control-color">
                             </div>
                         </div>
                     </li>
@@ -72,163 +51,263 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <main>
+        <section id="home" class="hero text-center">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1 class="display-4">Soluções Jurídicas Precisas</h1>
+                    <p class="lead">Assessoria especializada para sua empresa</p>
+                    <div class="hero-stats d-flex justify-content-center mt-4">
+                        <div class="stat mx-3">
+                            <h3 class="counter" data-target="150">0</h3>
+                            <p>Clientes Atendidos</p>
+                        </div>
+                        <div class="stat mx-3">
+                            <h3 class="counter" data-target="98">0</h3>
+                            <p>Casos Resolvidos</p>
+                        </div>
+                    </div>
+                    <a href="#servicos" class="btn btn-primary mt-3">Nossos Serviços</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Nossos Serviços</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-3" data-aos="flip-left">
+                        <div class="service-card">
+                            <i class="fas fa-balance-scale"></i>
+                            <h3>Direito Empresarial</h3>
+                            <p>Consultoria e gestão jurídica para empresas.</p>
+                            <a href="#" class="btn btn-outline-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3" data-aos="flip-left" data-aos-delay="200">
+                        <div class="service-card">
+                            <i class="fas fa-file-contract"></i>
+                            <h3>Contratos</h3>
+                            <p>Elaboração e análise de documentos contratuais.</p>
+                            <a href="#" class="btn btn-outline-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3" data-aos="flip-left" data-aos-delay="400">
+                        <div class="service-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Compliance</h3>
+                            <p>Adequação legal e gestão de riscos.</p>
+                            <a href="#" class="btn btn-outline-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="expertise" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Nossa Expertise</h2>
+                <div class="row">
+                    <div class="col-md-4" data-aos="fade-right">
+                        <div class="expertise-card">
+                            <i class="fas fa-gavel"></i>
+                            <h3>Direito Societário</h3>
+                            <p>Assessoria completa em constituição, alteração e dissolução de empresas.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up">
+                        <div class="expertise-card">
+                            <i class="fas fa-balance-scale"></i>
+                            <h3>Consultoria Preventiva</h3>
+                            <p>Identificação e mitigação de riscos legais antes que se tornem problemas.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-left">
+                        <div class="expertise-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Gestão de Riscos</h3>
+                            <p>Estratégias robustas para proteção legal e conformidade corporativa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">O Que Nossos Clientes Dizem</h2>
+                <div class="row">
+                    <div class="col-md-4" data-aos="zoom-in">
+                        <div class="testimonial-card">
+                            <p>"A IJ Jurídico transformou completamente nossa abordagem de compliance corporativo."</p>
+                            <div class="client-info">
+                                <h4>Carlos Silva</h4>
+                                <p>CEO, Empresa Tech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="testimonial-card">
+                            <p>"Resolução rápida e eficiente de questões legais complexas. Altamente recomendo!"</p>
+                            <div class="client-info">
+                                <h4>Ana Rodrigues</h4>
+                                <p>Diretora, Grupo Empresarial Delta</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="testimonial-card">
+                            <p>"Segurança jurídica que nos permite focar no crescimento do nosso negócio."</p>
+                            <div class="client-info">
+                                <h4>Roberto Oliveira</h4>
+                                <p>Fundador, Startup Inovadora</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos-detalhados" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Serviços Especializados</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4" data-aos="slide-right">
+                        <div class="service-detail-card">
+                            <h3>Direito Empresarial Estratégico</h3>
+                            <ul>
+                                <li>Consultoria em estruturação societária</li>
+                                <li>Análise e elaboração de contratos comerciais</li>
+                                <li>Suporte em negociações e fusões</li>
+                                <li>Assessoria em expansão de negócios</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4" data-aos="slide-left">
+                        <div class="service-detail-card">
+                            <h3>Compliance e Gestão de Riscos</h3>
+                            <ul>
+                                <li>Implementação de programas de integridade</li>
+                                <li>Auditoria de processos internos</li>
+                                <li>Treinamento corporativo em conformidade</li>
+                                <li>Suporte em investigações internas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipe" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Nossa Equipe</h2>
+                <div class="row">
+                    <div class="col-md-4" data-aos="flip-left">
+                        <div class="team-member">
+                            <img src="placeholder-lawyer-1.jpg" alt="Advogado 1" class="img-fluid rounded-circle">
+                            <h3>Dr. Iago Taveira</h3>
+                            <p>Sócio Fundador e Especialista em Direito Empresarial</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="flip-up">
+                        <div class="team-member">
+                            <img src="placeholder-lawyer-2.jpg" alt="Advogada 2" class="img-fluid rounded-circle">
+                            <h3>Dra. Marina Santos</h3>
+                            <p>Especialista em Compliance e Gestão de Riscos</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="flip-right">
+                        <div class="team-member">
+                            <img src="placeholder-lawyer-3.jpg" alt="Advogado 3" class="img-fluid rounded-circle">
+                            <h3>Dr. Ricardo Almeida</h3>
+                            <p>Consultor de Contratos e Negociações Estratégicas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Sobre Nós</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>Somos uma equipe especializada em fornecer soluções jurídicas estratégicas para empresas.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">IJ Jurídico</h3>
+                                <p>Comprometimento, expertise e resultados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="casos" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Casos de Sucesso</h2>
+                <div class="row">
+                    <div class="col-md-4" data-aos="zoom-in">
+                        <div class="success-case">
+                            <h4>Resolução Trabalhista</h4>
+                            <p>Mediação complexa de conflito trabalhista com resolução em 95% do valor inicial.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="success-case">
+                            <h4>Compliance Corporativo</h4>
+                            <p>Implementação de programa de compliance reduzindo riscos legais em 70%.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="success-case">
+                            <h4>Reestruturação Contratual</h4>
+                            <p>Revisão de contratos resultando em economia de R$ 500 mil para cliente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Contato</h2>
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Nome" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Sua Mensagem" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="text-large">Destaque qual a sua principal área de atuação</h1>
-                    <p class="text-highlight">Encontre aqui legislação atualizada para negócios ou estudos</p>
-                    <a href="#saiba-mais" class="btn btn-gold animate-hover">Saiba Mais</a>
-                </div>
+            <div class="social-links mb-3">
+                <a href="#" class="mx-2"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="mx-2"><i class="fab fa-whatsapp"></i></a>
             </div>
-        </div>
-    </section>
-
-    <!-- Sobre Section -->
-    <section id="sobre" class="section-padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <img src="/a/26e653eb-45a8-4ec3-81b5-8ba4420dcf53" alt="Equipe de advogados" class="img-fluid rounded">
-                </div>
-                <div class="col-lg-6">
-                    <h2>Conheça nossa expertise em advocacia</h2>
-                    <p>Nossa equipe altamente qualificada está pronta para atender suas necessidades jurídicas com excelência e profissionalismo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Áreas de Atuação -->
-    <section id="areas" class="section-padding bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Áreas de Atuação</h2>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="area-card">
-                        <i class="fas fa-balance-scale"></i>
-                        <h3>Direito Civil</h3>
-                        <p>Contratos, Família, Sucessões</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="area-card">
-                        <i class="fas fa-gavel"></i>
-                        <h3>Direito Penal</h3>
-                        <p>Defesa Criminal, Júri</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="area-card">
-                        <i class="fas fa-briefcase"></i>
-                        <h3>Direito Trabalhista</h3>
-                        <p>Ações Trabalhistas, Acordos</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Artigos Section -->
-    <section id="artigos" class="section-padding">
-        <div class="container">
-            <h2 class="text-center mb-5">Artigos e Legislação</h2>
-            
-            <!-- Search and Filter -->
-            <div class="row mb-4">
-                <div class="col-md-8">
-                    <input type="text" id="searchArticles" class="form-control" placeholder="Pesquisar artigos...">
-                </div>
-                <div class="col-md-4">
-                    <select id="codeFilter" class="form-select">
-                        <option value="all">Todos os Códigos</option>
-                        <option value="constituicao">Constituição Federal</option>
-                        <option value="civil">Código Civil</option>
-                        <option value="penal">Código Penal</option>
-                        <option value="clt">CLT</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Articles List -->
-            <div id="articlesList" class="row">
-                <!-- Articles will be dynamically loaded here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Planos Section -->
-    <section id="planos" class="section-padding bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Nossos Planos</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="plan-card">
-                        <h3>Gratuito</h3>
-                        <p class="price">R$ 0 / mês</p>
-                        <ul>
-                            <li>Acesso básico aos artigos</li>
-                            <li>Pesquisa limitada</li>
-                        </ul>
-                        <button class="btn btn-gold">Inscrever-se</button>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="plan-card recommended">
-                        <h3>Profissional</h3>
-                        <p class="price">R$ 29,90 / mês</p>
-                        <ul>
-                            <li>Acesso ilimitado aos artigos</li>
-                            <li>Pesquisa avançada</li>
-                            <li>Suporte prioritário</li>
-                        </ul>
-                        <button class="btn btn-gold">Inscrever-se</button>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="plan-card">
-                        <h3>Premium</h3>
-                        <p class="price">R$ 49,90 / mês</p>
-                        <ul>
-                            <li>Todos os recursos do plano profissional</li>
-                            <li>Acesso a artigos exclusivos</li>
-                            <li>Consultoria jurídica online</li>
-                        </ul>
-                        <button class="btn btn-gold">Inscrever-se</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-light">
-        <div class="container py-4">
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>IJ Artigos</h4>
-                    <p>Seu guia jurídico completo</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Contato</h4>
-                    <p>Email: contato@ijartigos.com.br</p>
-                    <p>Tel: (11) 1234-5678</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
+            <p>&copy; 2024 IJ Jurídico. Desenvolvido por Iago Henrique Taveira Bueno</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
-    <script src="theme-manager.js"></script>
 </body>
 </html>

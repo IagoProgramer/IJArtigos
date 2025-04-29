@@ -1,4 +1,4 @@
-    // Advanced interaction and animation helpers
+// Advanced interaction and animation helpers
 class InteractiveEnhancements {
     static setupTextReveal() {
         const revealElements = document.querySelectorAll('.text-reveal');
